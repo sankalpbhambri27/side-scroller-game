@@ -12,9 +12,11 @@ function Game() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     
-    // Game constants
-    const GRAVITY = 0.5;
-    const JUMP_FORCE = -10;
+    // Game constants - Adjusted for easier gameplay
+    const GRAVITY = 0.3;          // Reduced gravity for slower fall
+    const JUMP_FORCE = -12;        // Increased jump force
+    const OBSTACLE_SPEED = 3;      // Slower obstacle speed
+    const OBSTACLE_SPAWN_RATE = 0.01; // Reduced spawn rate
     const GROUND = canvas.height - 20;
     
     // Game state
@@ -64,7 +66,7 @@ function Game() {
       
       // Update obstacles
       obstacles.forEach((obstacle, index) => {
-        obstacle.x -= 5;
+        obstacle.x -= OBSTACLE_SPEED;
         
         // Draw obstacle
         ctx.fillStyle = '#F44336';
@@ -85,8 +87,8 @@ function Game() {
         }
       });
       
-      // Create new obstacles
-      if (Math.random() < 0.02) {
+      // Create new obstacles with reduced frequency
+      if (Math.random() < OBSTACLE_SPAWN_RATE) {
         createObstacle();
       }
       
