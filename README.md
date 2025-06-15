@@ -45,7 +45,7 @@ A captivating 2D side-scrolling platformer where you guide Lumen, a young explor
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## ✨ Special Thanks
-- [Your Name] - Lead Developer
+- Sankalp Bhambri - Lead Developer
 - [Other Contributors] - For their valuable contributions
 
 ## 📧 Contact
